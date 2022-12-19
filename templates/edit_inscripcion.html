@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
-{% block title%}Sistema de Reserva Local Gastronomico{% endblock %}
-{% block content%}
-<div class="alert alert-info display-1 text-center">Crear una Reserva</div>
-
+{% block title %}Sistema Inscripcion a Seminarios{% endblock %}
+{% block content %}
+    <div class="alert alert-info display-1 text-center">Editar  Inscripcion</div>
     <form method="post">
         <table class="table">
             {% csrf_token %}
-            {{form.as_table}}
+            {{ form.as_table }}
         </table>
-        <input type="submit" value="Crear Inscripcion" class="btn btn-info">
+        <input type="submit" value="Editar Inscripcion" class="btn btn-warning">
     </form>
 {% endblock %}
