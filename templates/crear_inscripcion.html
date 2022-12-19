@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+    Ingresar Inscripcion
+{% endblock title %}
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show"
+                 role="alert">
+                {{ message }}
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert"
+                        aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="alert alert-info display-1 text-center">Inscribir Participante</div>
+    <form method="post">
+        <table class="table">
+            {% csrf_token %}
+            {{ form }}
+        </table>
+        <div class=" d-flex justify-content-between">
+            <input type="submit" value="Inscribir" class="btn btn-success"/>
+            <a href="../" class="btn btn-danger">VOLVER</a>
+        </div>
+    </form>
+{% endblock content %}
